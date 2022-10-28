@@ -15,7 +15,10 @@ def checkplatform():
     
 def replace_characters(current_string):
     #replaces any " " or _ with -, lowercases, and eliminates special chars
-    result = re.sub('[^0-9a-zA-Z]+', '', current_string.replace(" ","-").replace("_","-").lower())
+    current_string = current_string.replace(" ","-")
+    current_string = current_string.replace("_","-")
+    print(current_string)
+    result = re.sub('[^0-9a-zA-Z-]+', '', current_string.replace(" ","-").replace("_","-").lower())
     return result
 
 def get_dir(trydir):
@@ -64,11 +67,11 @@ def request_dir():
     get_dir(trydir)
     
 def testcase():
-    get_dir("/Users/iankoratsky/Desktop")
+    get_dir("") #place a test case in here if you need to test it
         
 def main():
     checkplatform()
     request_dir()
 
-#main()
-testcase()
+main()
+#testcase()
