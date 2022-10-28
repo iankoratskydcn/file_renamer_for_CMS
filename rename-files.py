@@ -1,5 +1,8 @@
+import platform
 import os
+import sys
 import re
+from os import walk
 from pathlib import Path
 
     
@@ -46,8 +49,11 @@ def request_dir():
     trydir = input("What's the directory? ")
     get_dir(trydir)
     
+def testcase():
+    get_dir("C:/Users/ianko/Desktop/test") #place a test case in here if you need to test it
         
 def main():
     request_dir()
 
 main()
+#testcase()
